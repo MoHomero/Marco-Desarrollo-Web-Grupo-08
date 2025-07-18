@@ -1,0 +1,6 @@
+- Recuerde tener instalado el workbench
+- recuerde que el archivo application.properties cambiar lo que seria el usarname y password dependiendo el de usted
+- también cambiar en la parte del puerto jdbc:mysql://localhost:3307/tienda_electronica1?allowPublicKeyRetrieval=true&useSSL=false
+- yo lo tengo en el 3307 a lo mejor usted lo tiene en el 3306 por defecto y también el nombre de la base de datos si lo cambie recuerde cambiarlo
+- recuerde tener la extensión de spring boot o las que se usaron en clases por defecto
+- con esto el proyecto va correr 
