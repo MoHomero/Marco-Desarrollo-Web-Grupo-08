@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="Inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <title>Lista Desplegable</title>
+    <style>
+        body2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9f5ff; /* Un azul claro suave para el fondo */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Para que el footer quede abajo */
+            min-height: 100vh; /* Ocupa al menos el alto de la ventana */
+        }
+
+        /* Estilos del encabezado */
+        header {
+            background-color: #007bff; /* Azul primario de Bootstrap */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Contenedor principal de las preguntas frecuentes */
+        .faq-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto; /* Centra el contenedor y le da espacio */
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            flex-grow: 1; /* Permite que el contenedor crezca para empujar el footer hacia abajo */
+        }
+
+        .faq-section {
+            margin-bottom: 30px;
+        }
+
+        .faq-section h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        /* Estilos para el acordeón (preguntas) */
+        .acordeon {
+            background-color: #f8f9fa; /* Gris claro */
+            color: #495057; /* Gris oscuro */
+            cursor: pointer;
+            padding: 18px 25px;
+            width: 100%;
+            border: 1px solid #dee2e6; /* Borde suave */
+            text-align: left;
+            outline: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-bottom: 5px; /* Espacio entre botones */
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .acordeon:hover {
+            background-color: #e2e6ea; /* Un poco más oscuro al pasar el ratón */
+            color: #212529;
+        }
+
+        .acordeon.active, .acordeon:focus {
+            background-color: #007bff; /* Azul al estar activo/enfocado */
+            color: white;
+            border-color: #007bff;
+        }
+        /* Estilos para el icono del acordeón */
+        .acordeon .icon {
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+        }
+        .acordeon.active .icon {
+            transform: rotate(180deg); /* Gira el icono cuando está activo */
+        }
+
+        /* Estilos para el panel de respuesta */
+        .panel {
+            padding: 0 25px;
+            background-color: #f0f8ff; /* Un azul muy claro para el panel */
+            overflow: hidden;
+            max-height: 0; /* Inicialmente oculto */
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Transición suave */
+            border-left: 3px solid #007bff; /* Barra lateral azul */
+            margin-bottom: 15px; /* Espacio después de cada panel */
+            border-radius: 0 0 5px 5px;
+        }
+        .panel p {
+            padding: 15px 0; /* Espacio interno del texto */
+            margin: 0;
+            line-height: 1.6;
+        }
+        .panel.show {
+            max-height: 200px; /* Altura máxima para mostrar el contenido (ajusta si es necesario) */
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #343a40; /* Gris oscuro de Bootstrap */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(189, 222, 245);"></body>
+
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alt"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M1 13.5a.5.5 0 0 0 .5.5h3.797a.5.5 0 0 0 .439-.26L11 3h3.5a.5.5 0 0 0 0-1h-3.797a.5.5 0 0 0-.439.26L5 13H1.5a.5.5 0 0 0-.5.5m10 0a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5" />
+                </svg>
+                Tienda Teconologica
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="Inicio.html">Inicio</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link" href="#" id="usuarioNombre" data-bs-toggle="dropdown" aria-expanded="false">Usuario</a>
+
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Perfil.html">Perfil</a></li>
+                                <li><a class="dropdown-item" href="Pedidos.html">Pedidos</a></li>
+                                <li><a class="dropdown-item" href="Carrito.html">Carrito</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="Login.html">Cerrar sesión</a></li>
+                            </ul>
+                                </div>
+                            </li>                
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost:8080/ayuda.html">Ayuda</a>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </a>
+        </div>
+    </nav>
+</body>
+
+<body2>
+<div class="faq-container">
+        <div class="faq-section">
+            <h2>Cuenta y Registro</h2>
+            <button class="acordeon">¿Qué pasa si no me llegó el correo de validación? <span class="icon">&#9660;</span></button>
+            <div class="panel">
+                <p>Por favor, revisa tu carpeta de correo no deseado (Spam) o Junk. A veces, nuestros correos pueden terminar allí. También, asegúrate de que tu bandeja de entrada no esté llena. Si el problema persiste, contacta a nuestro soporte técnico.</p>
+            </div>
+
+            <button class="acordeon">¿Cómo puedo restablecer mi contraseña? <span class="icon">&#9660;</span></button>
+            <div class="panel">
+                <p>Si olvidaste tu contraseña, ve a la página de inicio de sesión y haz clic en "¿Olvidaste tu contraseña?". Sigue las instrucciones para recibir un enlace de restablecimiento en tu correo electrónico registrado.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Contacto y Soporte</h2>
+            <button class="acordeon">¿Cómo puedo contactar con servicio al cliente? <span class="icon">&#9660;</span></button>
+            <div class="panel">
+                <p>Puedes contactarnos vía WhatsApp al <strong>+51 956 531 880</strong> directamente haciendo click en <strong><a href="/contactenos">Contactenos</a></strong>, o enviando un correo electrónico a soporte@shopify.com.pe. Estamos disponibles de Lunes a Viernes de 9 AM a 6 PM.</p>
+            </div>
+
+            <button class="acordeon">¿Dónde puedo registrar un reclamo o incidencia con un producto? <span class="icon">&#9660;</span></button>
+            <div class="panel">
+                <p>Si has tenido algún inconveniente con un producto comprado, primero verifica que se encuentre dentro del periodo de garantía especificado y que el problema sea un defecto de fábrica, no causado por un uso inadecuado o exterior. Para iniciar un reclamo, por favor dirígete a la sección "Mis Compras" en tu perfil o contacta directamente a nuestro servicio al cliente con tu número de pedido.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Compras y Envíos</h2>
+            <button class="acordeon">¿Cuáles son los métodos de pago aceptados? <span class="icon">&#9660;</span></button>
+            <div class="panel">
+                <p>Aceptamos pagos con tarjetas de crédito/débito (Visa, MasterCard, American Express), PayPal y transferencias bancarias directas. Todas las transacciones son seguras y están encriptadas.</p>
+            </div>
+
+            <button class="acordeon">¿Cuánto tiempo tarda en llegar mi pedido? <span class="icon">&#9660;</span></button>
+            <div class="panel">
+                <p>El tiempo de entrega estándar es de 3 a 5 días hábiles, dependiendo de tu ubicación. Para envíos internacionales, los tiempos pueden variar. Recibirás un número de seguimiento una vez que tu pedido sea despachado.</p>
+            </div>
+
+            <button class="acordeon">¿Puedo cambiar o cancelar mi pedido? <span class="icon">&#9660;</span></button>
+            <div class="panel">
+                <p>Puedes cambiar o cancelar tu pedido dentro de las 24 horas siguientes a la compra, siempre y cuando no haya sido procesado o enviado. Por favor, contacta a nuestro equipo de soporte lo antes posible.</p>
+            </div>
+        </div>
+        </div>
+
+    <footer>
+        <p>&copy; 2025 Tienda Tecnológica. Todos los derechos reservados.</p>
+        <p><a href="/politica-privacidad">Política de Privacidad</a> | <a href="/terminos-servicio">Términos de Servicio</a></p>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const acordeones = document.querySelectorAll(".acordeon");
+
+            acordeones.forEach(boton => {
+                boton.addEventListener("click", function() {
+                 
+                    acordeones.forEach(otherButton => {
+                        if (otherButton !== this && otherButton.classList.contains("active")) {
+                            otherButton.classList.remove("active");
+                            otherButton.querySelector('.icon').innerHTML = '&#9660;'; // Icono hacia abajo
+                            otherButton.nextElementSibling.classList.remove("show");
+                        }
+                    });
+
+                   
+                    this.classList.toggle("active");
+
+                    
+                    const icon = this.querySelector('.icon');
+                    if (this.classList.contains("active")) {
+                        icon.innerHTML = '&#9650;'; 
+                    } else {
+                        icon.innerHTML = '&#9660;'; 
+                    }
+
+                   
+                    const panel = this.nextElementSibling;
+                    panel.classList.toggle("show");
+                });
+            });
+        });
+    </script>
+
+</body2>
+
+</html>

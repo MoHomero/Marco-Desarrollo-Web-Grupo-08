@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>| Tech Store</title>
+    <link rel="stylesheet" type="text/css" href="css/Producto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/Inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet"> 
+</head>
+<body style="background-color: rgb(189, 222, 245);">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alt" viewBox="0 0 16 16">
+          <path d="M1 13.5a.5.5 0 0 0 .5.5h3.797a.5.5 0 0 0 .439-.26L11 3h3.5a.5.5 0 0 0 0-1h-3.797a.5.5 0 0 0-.439.26L5 13H1.5a.5.5 0 0 0-.5.5m10 0a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5"/>
+        </svg>
+          Tienda Teconologica
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="Inicio.html">Inicio</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link" href="#" id="usuarioNombre" data-bs-toggle="dropdown" aria-expanded="false">Usuario</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="Pedidos.html">Pedidos</a></li>
+                                <li><a class="dropdown-item" href="Carrito.html">Carrito</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="Login.html">Cerrar sesión</a></li>
+                            </ul>
+                    </div>
+                  </li>                
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Ayuda</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Productos</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </a>
+      </div>
+    </nav>
+    <main>
+    <div class="container">
+        <!-- Sección izquierda (galería de productos) -->
+        <div class="left-section">
+            <div class="product-gallery">
+                 <!-- Mostrar la imagen del producto usando la ruta almacenada en la BD -->
+                <img id="imagen-producto" src="" alt="Producto">
+            </div>              
+        </div>
+        <br>
+        <!-- Sección derecha (información del producto) -->
+        <div class="right-section">
+            <div class="product-info">
+                <!-- Mostrar el nombre del producto -->
+                <h1 id="nombre-producto"></h1>
+                <div class="rating">
+                    <span>3.7 (3 opiniones)</span>
+                </div>
+                <!-- Mostrar el precio con formato numérico y dos decimales -->
+                <p class="price" id="precio-producto"></p>
+                <!-- Mostrar cuotas calculadas a partir del precio -->
+                <p class="installments">en 12 cuotas de S/ sin interés</p>
+                <div id="paypal-button-container"></div>
+                <button class="buy-now">Comprar ahora</button>  
+
+                <button class="add-to-cart" id="btn-carrito">Agregar al carrito</button>
+                <br><br>
+                <p class="stock-status">Cantidad: 
+                    <select id="cbd">
+                    <option value="1">1 Unidad</option>
+                    <option value="2">2 Unidades</option>
+                    <option value="3">3 Unidades</option>
+                  </select>
+                </p>
+                <p class="shipping-info">Llega gratis entre el miércoles y jueves</p>
+                <p class="color-info">Color: Negro</p>
+            </div>
+
+            <div class="seller-info">
+                <h3>Vendido por VIVI8972679</h3>
+                <p>MercadoLíder | +100 ventas</p>
+                <p>Devolución gratis. 30 días desde que lo recibes.</p>
+                <p>Compra Protegida, recibe el producto que esperabas o te devolvemos tu dinero.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de productos relacionados -->
+    <div class="description">
+        <h2>Productos Relacionados</h2>
+        <div class="related-items">
+            <div>
+                <img src="https://http2.mlstatic.com/D_NQ_NP_629798-MPE74063549785_012024-O.webp" alt="Realme Buds Tws Air 6 Pro">
+                <p class="price">S/ 289</p>
+                <p class="free-shipping">Envío gratis</p>
+                <p>Realme Buds Tws Air 6 Pro</p>
+            </div>
+            <div>
+                <img src="https://http2.mlstatic.com/D_NQ_NP_810669-MLA40251110485_122019-O.webp" alt="Audio-Technica M">
+                <p class="price">S/ 229</p>
+                <p class="free-shipping">Envío gratis</p>
+                <p>Auriculares Audio-Technica M</p>
+            </div>
+            <div>
+                <img src="https://http2.mlstatic.com/D_NQ_NP_757954-MLU74419375063_022024-O.webp" alt="Sleve Evo">
+                <p class="price">S/ 129</p>
+                <p class="free-shipping">Envío gratis</p>
+                <p>Audífonos Inalámbricos Sleve Evo</p>
+            </div>
+            <div>
+                <img src="https://http2.mlstatic.com/D_NQ_NP_724184-MLU76810268741_062024-O.webp" alt="Haylou S30">
+                <p class="price">S/ 169</p>
+                <p class="free-shipping">Envío gratis</p>
+                <p>Audífonos Inalámbrico Haylou S30</p>
+            </div>
+            <div>
+                <img src="https://http2.mlstatic.com/D_NQ_NP_896890-MPE75880929928_042024-O.webp" alt="Kz In">
+                <p class="price">S/ 199</p>
+                <p class="free-shipping">Envío gratis</p>
+                <p>Audífonos In-ear Gamer Kz In</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de descripción del producto -->
+    <div class="description">
+        <h2>Descripción</h2>
+        <div class="reconditioned-warning">
+            <h4>Producto Totalmente Nuevo</h4>
+            <p id="descripcion-producto"></p>
+        </div>
+        <p>
+            *************PS GAME STORE*************<br>
+            *En venta *  <br>
+            Los mejores del Mercado.<br>
+            >>> entrega<br>
+        </p>
+        <a href="#">Ver descripción completa</a>
+    </div>
+</main>
+<script src="https://www.paypal.com/sdk/js?client-id=ASx22L8g0sBA3T3YoM8RaJ1QuRFjo8D0SyfHmxsdFvE5Ed571bIcW0CQ7ctXjhO1ozNqr69Tad8CRyj0&currency=USD&disable-funding=card,credit"></script>
+<script src="js/inicio.js"></script>
+<script src="js/producto.js"></script>
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btnComprar = document.querySelector(".buy-now");
+  const precioElemento = document.getElementById("precio-producto");
+  const paypalContainer = document.getElementById("paypal-button-container");
+
+  btnComprar.addEventListener("click", () => {
+    const precioTexto = precioElemento.textContent.trim().replace(/[^\d.]/g, "");
+    const precio = parseFloat(precioTexto);
+
+    if (!precio || isNaN(precio)) {
+      alert("❌ No se pudo obtener el precio del producto.");
+      return;
+    }
+
+    paypalContainer.style.display = "block";
+
+    paypal.Buttons({
+      createOrder: function (data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: precio.toFixed(2),
+              currency_code: "USD"
+            }
+          }]
+        });
+      },
+      onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
+          alert("✅ Pago realizado por " + details.payer.name.given_name);
+          console.log("Detalles del pago:", details);
+
+          const nombreProducto = document.getElementById("nombre-producto").textContent.trim();
+          const imagenProducto = document.getElementById("imagen-producto").getAttribute("src");
+          const cantidad = parseInt(document.getElementById("cbd").value);
+
+          const pedido = {
+            nombreProducto: nombreProducto,
+            cantidad: cantidad,
+            estado: "Pagado",
+            imagenProducto: imagenProducto,
+            fechaPedido: new Date()
+          };
+
+          // Registrar el pago
+          const pagoInfo = {
+            nombre: details.payer.name.given_name,
+            apellido: details.payer.name.surname,
+            email: details.payer.email_address,
+            id_transaccion: details.id,
+            estado: details.status,
+            monto: details.purchase_units[0].amount.value,
+            moneda: details.purchase_units[0].amount.currency_code
+          };
+
+          fetch("http://localhost:8080/api/pagos", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(pagoInfo)
+          })
+          .then(res => {
+            if (!res.ok) throw new Error("Error al guardar el pago");
+            return res.json();
+          })
+          .then(() => {
+            // Registrar pedido en la base de datos
+            return fetch("http://localhost:8080/api/pedido/producto/pedido", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              credentials: "include",
+              body: JSON.stringify(pedido)
+            });
+          })
+          .then(res => {
+            if (!res.ok) throw new Error("Error al registrar el pedido");
+            return res.json();
+          })
+          .then(data => {
+            alert("🧾 " + data.mensaje);
+            window.location.href = "/Pedidos.html";
+          })
+          .catch(error => {
+            console.error("❌ Error procesando el pago o pedido:", error);
+            alert("❌ Error al registrar el pedido o guardar el pago.");
+          });
+        });
+      },
+      onError: function (err) {
+        console.error("Error con PayPal:", err);
+        alert("❌ Hubo un error con el pago.");
+      }
+    }).render("#paypal-button-container");
+
+    // Evitar múltiples renders
+    btnComprar.disabled = true;
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito - Tienda Tecnológica</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/Carrito.css" />
+    <link rel="stylesheet" href="css/inicio.css" />
+</head>
+<body style="background-color: rgb(189, 222, 245);">
+    <!-- Example Code Start-->
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alt" viewBox="0 0 16 16">
+          <path d="M1 13.5a.5.5 0 0 0 .5.5h3.797a.5.5 0 0 0 .439-.26L11 3h3.5a.5.5 0 0 0 0-1h-3.797a.5.5 0 0 0-.439.26L5 13H1.5a.5.5 0 0 0-.5.5m10 0a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5"/>
+        </svg>
+          Tienda Teconologica
+         <nav class="navbar navbar-expand-lg bg-body-tertiary">           
+          <form class="barra-busqueda" action="busqueda.html" method="GET">
+                <input type="text" name="query" placeholder="Buscar productos...">
+                <button type="submit">Buscar</button>
+            </form>
+            <div class="container-fluid">
+              <a class="navbar-brand" href="Inicio.html">Inicio</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link" href="#" id="usuarioNombre" data-bs-toggle="dropdown" aria-expanded="false">Usuario</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="Pedidos.html">Pedidos</a></li>
+                                <li><a class="dropdown-item" href="Carrito.html">Carrito</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="Login.html">Cerrar sesión</a></li>
+                            </ul>
+                    </div>
+                  </li>                
+                  <li class="nav-item">
+                    <a class="nav-link" href="ayuda.html">Ayuda</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Gestion de Productos</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </a>
+      </div>
+    </nav>   
+    <br>
+    <div class="carrito-container container mt-4">
+        <h2 class="carrito-titulo">Carrito de Compras</h2>
+        <div class="carrito-contenido row">
+        <div class="carrito-productos col-md-8" id="carritoItems">
+            <!-- Los productos se insertarán aquí con JS -->
+        </div>
+        <div class="carrito-resumen col-md-4">
+            <h5>Resumen</h5>
+            <div class="carrito-resumen-linea">
+            <span>Subtotal</span>
+            <span id="subtotal">S/ 0.00</span>
+            </div>
+            <div class="carrito-resumen-linea">
+            <span>Envío</span>
+            <span>Gratis</span>
+            </div>
+            <div class="carrito-resumen-total">
+            <span>Total</span>
+            <span id="total">S/ 0.00</span>
+            </div>
+            <button class="carrito-boton-comprar btn btn-success w-100 mt-3" onclick="location.href='Pago.html'">Continuar con la compra</button>
+        </div>
+        </div>
+    </div>
+  <script src="js/inicio.js"></script>
+  <script src="js/carrito.js"></script>
+  
+</body>
+</html>

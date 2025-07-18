@@ -1,0 +1,144 @@
+.carrito-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f7f9fb;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.carrito-titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Flexbox de dos columnas */
+.carrito-contenido {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Productos a la izquierda */
+.carrito-productos {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Producto individual */
+.carrito-producto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Imagen del producto */
+.carrito-imagen {
+  max-height: 100px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+/* Info del producto */
+.carrito-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.carrito-nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.carrito-vendedor {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Precio */
+.carrito-precio {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 20px;
+}
+
+/* Cantidad */
+.carrito-cantidad input {
+  width: 60px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+/* Eliminar */
+.carrito-eliminar button {
+  background-color: transparent;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  border-radius: 8px;
+  padding: 5px 10px; 
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.carrito-eliminar button:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Resumen a la derecha */
+.carrito-resumen {
+  flex: 1;
+  min-width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  align-self: flex-start;
+}
+
+.carrito-resumen h5 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.carrito-resumen-linea {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.carrito-resumen-total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.carrito-boton-comprar {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #1f8ae7;
+  border: none;
+  color: #f8f8f8;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.carrito-boton-comprar:hover {
+  background-color: #1664c5;
+}

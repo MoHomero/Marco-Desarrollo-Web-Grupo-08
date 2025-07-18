@@ -1,0 +1,160 @@
+/*Filtro*/
+#resultado{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+#filter{
+    width: 20%;
+    padding: 10px;
+}
+#filter input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+a:link, a:visited {
+    color: black; /* El color del enlace cuando no se ha visitado o se ha visitado */
+}
+
+a:hover, a:active {
+    color: black; /* El color del enlace cuando el mouse está sobre él o está activo */
+}
+
+/* Opcional: puedes aplicar estilos directamente al h3 si solo deseas cambiar el color del título */
+.product-info h3 {
+    color: black;
+}
+.product-info p {
+    color: black;
+}
+/*Producto*/
+#productos{
+    width: 70%;
+}
+.producto{
+    width: 1000px;
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    cursor: pointer;
+}
+.producto img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.product-info{
+    flex-grow: 1;
+}
+.product-info h3{
+    margin: 0;
+    font-size: 18px;
+}
+.product-info p{
+    margin: 5px 0;
+}
+.product-info .price{
+    color: #3483fa;
+    font-size: 20px;
+    font-weight: bold;
+}
+.precios{
+    width: 70px;
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/*Deslisante*/
+.switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 27px;
+}
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: 0.4s;
+border-radius: 14px; /* Redondeo completo */
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 20px;
+width: 20px;
+left: 2px;
+bottom: 4px;
+background-color: white;
+transition: 0.4s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: #4CAF50; /* Color cuando está encendido */
+}
+
+input:checked + .slider:before {
+transform: translateX(26px); /* Mueve el círculo hacia la derecha */
+}
+
+ul{
+    list-style-type: none; /* sin viñeta*/
+    display: flex;
+    float: left;/*las opciones se orientan a la izquierda */		
+}
+li{
+    font-size: 18px;
+    margin-right: 20px;
+}
+a .producto{/* vinculo de pagina*/
+    text-decoration: none;/*quitar el subrayado*/
+    color: inherit;
+}
+a:hover{
+    color: blue;/* cada vez que se enfoca la opcion poner color azul*/
+   margin-top: 0px;
+    }
+.barra-busqueda {
+      display: flex;
+      justify-content: center;
+}
+.barra-busqueda input[type="text"] {
+    width: 400px;      /* Ancho */
+    height: 40px;      /* Altura */
+    padding: 0 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+.barra-busqueda button {
+    width: 100px;      /* Ancho del botón */
+    height: 40px;      /* Altura igual al input */
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.barra-busqueda button:hover {
+    background-color: #0056b3;
+}
